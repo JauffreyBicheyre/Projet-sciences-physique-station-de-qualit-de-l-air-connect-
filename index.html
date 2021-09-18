@@ -1,67 +1,63 @@
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>formrun.js - Alert Dialog</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.slim.min.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="ListProduct2.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
-  <script src="https://sdk.form.run/js/v2/formrun.js">
-    <div class="examples">
-        <button class="btn btn-lg btn-primary sweet-10" onclick="_gaq.push(['_trackEvent', 'example, 'try', 'Primary']);">Primary</button>
-        <button class="btn btn-lg btn-info sweet-11" onclick="_gaq.push(['_trackEvent', 'example, 'try', 'Info']);">Info</button>
-        <button class="btn btn-lg btn-success sweet-12" onclick="_gaq.push(['_trackEvent', 'example, 'try', 'Success']);">Success</button>
-        <button class="btn btn-lg btn-warning sweet-13" onclick="_gaq.push(['_trackEvent', 'example, 'try', 'Warning']);">Warning</button>
-        <button class="btn btn-lg btn-danger sweet-14" onclick="_gaq.push(['_trackEvent', 'example, 'try', 'Danger']);">Danger</button>
-      </div>
-</script>
-</head>
-<body>
-    <div class="sa">
-        <div class="sa-success">
-        <div class="sa-success-tip"></div>
-        <div class="sa-success-long"></div>
-        <div class="sa-success-placeholder"></div>
-        <div class="sa-success-fix"></div>
-        </div>
+<!DOCTYPE html>
+<html lang= "fr">
+     <head>
+        <meta charset= "utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Accusé de reception digitanie</title>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </head>
+     <body>
+         <form id="formulaire" method="post" action="">
+            <p>
+                 <label>Votre nom</label> : <br><br>
+                 <input type="text" name="nom" id="nom" placeholder="Ex : Dupont" required/>
+            </p>
+            <p>
+                <label>Votre Prénom</label> : <br><br>
+                <input type="text" name="prenom" placeholder="Ex : Alexandre" required/>
+            </p>
+            <p>
+                <div class="inputBox">
+    <label>Adresse e-mail</label> :
+    <input type="email" name="user[email]" for="email" id="email" placeholder="Ex : exemple@domaine.com" pattern="'[A-Z0-9a-z._]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}'" required />
+    <input type="url" name="user[url]" for="url" placeholder="Ex : /example" onclick="test()" />
+    </p></div>
+    <p>
+    <label>Votre mot de passe</label> : <br><br>
+    <input class="input" type="password" name="motdepasse " placeholder="mot de passe" required/>
+    </p>
+    <p>
+    <label>Confirmer votre mot de passe</label> : <br><br>
+    <input type="password" name="motdepasse" placeholder="mot de passe"/>
+    </p>
+    <p>
+    <label>Nom de la région</label> : <br><br>
+    <input type="text " name="nomregion" required/>
+    </p>
+    <button onclick="PopUp()">Oui</button>
+    <button type="submit" name="envoyer" onclick="validation()">
 
-
-<div class="container">
-  <h1>formrun.js <small> - Alert Dialog</small></h1>
-
-  <div class="card">
-    <h3 class="card-header">アラート・ダイアログ</h3>
-
-    <div class="card-block">
-      <form class="formrun" action="#" method="get" data-formrun-alert-dialog>
-        <div class="form-group"
-            data-formrun-class-if-success="has-success" data-formrun-class-if-error="has-danger" data-formrun-target="お名前">
-          <label class="form-control-label" for="name">お名前</label>
-          <input type="text" class="form-control" id="name" name="お名前"
-                data-formrun-required data-formrun-class-if-success="form-control-success" data-formrun-class-if-error="form-control-danger">
-          <div class="text-danger" data-formrun-show-if-error="お名前">お名前を正しく入力してください</div>
-        </div>
-
-        <div class="form-group"
-            data-formrun-class-if-success="has-success" data-formrun-class-if-error="has-danger" data-formrun-target="メールアドレス">
-          <label class="form-control-label" for="email">メールアドレス</label>
-          <input class="form-control" id="email" name="メールアドレス"
-                data-formrun-class-if-success="form-control-success" data-formrun-class-if-error="form-control-danger"
-                data-formrun-required data-formrun-type="email" data-formrun-class-if-success="form-control-success" data-formrun-class-if-error="form-control-danger">
-
-          <div class="text-danger" data-formrun-show-if-error="メールアドレス">メールアドレスを正しく入力してください</div>
-        </div>
-        <br>
-        <div class="row">
-        <div class="col-sm-2 text-center">
-          <p><button class="btn btn-primary sweet-3" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-3']);">Try It</button></p>
-        </div>
-      </form>
     </div>
-  </div>
+    </form>
+        </div>
+        <script>
+        function validation()
+        {
+            var email = document.getElementById("email").value;
+            var regex = '[A-Z0-9a-z._]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}';
+            if(email.match(regex))
+            {
+                swal("Your email is valid", "", "success");
+            }
+            else{
+                swal("Your email is invalid", "Please retry", "error");
+            }
+        }
 
-  
-</div><!-- /.container -->
-
-</body>
+        function PopUp(){
+            swal("Your message has been sent sucessful", "Please check out your mail for confirmation", "success");
+        }
+        </script>
+    </body>
 </html>
